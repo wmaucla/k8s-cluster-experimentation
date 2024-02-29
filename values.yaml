@@ -1,0 +1,28 @@
+initContainers:
+  - name: velero-plugin-for-aws
+    image: velero/velero-plugin-for-aws:v1.9.0
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+      - mountPath: /target
+        name: plugins
+
+
+upgradeCRDs: true
+snapshotsEnabled: false
+cleanUpCRDs: true
+
+metrics:
+  enabled: false
+
+configuration:
+  logLevel: debug
+
+  backupStorageLocation:
+    - name: default
+      bucket: velero
+      provider: aws
+      config:
+        region: minio
+        s3ForcePathStyle: true
+        s3Url: http://minio.velero.svc:9000
+        publicUrl: http://192.168.49.2:31343
