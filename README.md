@@ -15,6 +15,7 @@ asdf install terraform latest
 
 ```bash
 minikube start --profile cert-manager-upgrade
+export KUBE_CONFIG_PATH=~/.kube/config
 ```
 
 3. Testing out changes
@@ -22,5 +23,13 @@ minikube start --profile cert-manager-upgrade
 ```bash
 terraform init
 terraform plan
-terraform apply
+terraform apply -autoapprove
 ```
+
+
+### Installation of CDK8s
+
+```bash
+npm install -g cdk8s-cli
+```
+

@@ -17,8 +17,8 @@ resource "helm_release" "velero" {
   chart      = "velero"
   version    = "5.4.1"
 
-  timeout = "30"
-  values = [file("values.yaml")]
+  timeout = "300"
+  values  = [file("values.yaml")]
 
   depends_on = [
     kubernetes_namespace.velero

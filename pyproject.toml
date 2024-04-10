@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "k8s-cluster-experimentation"
+version = "0.1.0"
+description = ""
+authors = ["wmaucla <zhengweima@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+cdk8s = "^2.68.58"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
